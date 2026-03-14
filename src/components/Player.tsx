@@ -2,8 +2,13 @@ import { useSphere } from "@react-three/cannon";
 import { useFrame, useThree } from "@react-three/fiber"
 import { useEffect, useRef } from "react";
 import { Vector3 } from "three";
+import { useKeyboard } from '../hooks/useKeyboard.js'
 
 export const Player = () => {
+
+  const actions = useKeyboard();
+  console.log(actions)
+
   const { camera } = useThree();
   const [ref, api] = useSphere(() => ({
     mass: 1,
@@ -34,6 +39,8 @@ export const Player = () => {
       )
     )
 
+    // Move the camera forward
+    // This should be with the keys
     api.velocity.set(0, 0, - 1)
   })
 

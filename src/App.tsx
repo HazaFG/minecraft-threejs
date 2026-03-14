@@ -7,9 +7,9 @@ import { FPV } from "./components/FPV"
 function App() {
   return (
     <Canvas>
-      <Sky sunPosition={[100, 100, 20]}></Sky>
+      <Sky sunPosition={[50, 10, 15]}></Sky>
       {/* Estos elementos de three js van en minuscula */}
-      <ambientLight intensity={0.5} />
+      <ambientLight intensity={1} />
       <FPV />
       <Physics>
         <Ground />
